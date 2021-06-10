@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="icon" href="https://external-preview.redd.it/qZduXAEoyN41zQ223nXn0BgevlbnaobL0awPmBspcgw.jpg?auto=webp&s=e5b4b29bd9e4ab32bbaad3e594b8e518ef67c5f9" type="image/icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="header-name">
+            Michael Chang | 2021
+        </div>
+    </header>
+
+    <h1>Meme Generator</h1>
+
+    <form id="form">
+        <label for="imgURL">URL Of Image</label>
+        <input type="text" id="imgURL" placeholder="Paste the URL for your image here"><br><br>
+        <label for="topTextInput">Text On Top</label>
+        <input type="text" id="topTextInput" placeholder="(Optional) What text do you want on the top of your meme"><br><br>
+        <label for="bottomTextInput">Text On Bottom</label>
+        <input type="text" id="bottomTextInput" placeholder="(Optional) What text do you want on the bottom of your meme?"><br><br>
+        <input type="submit" value="Create Your Meme" id="submitButton">
+    </form><br><br>
+
+    <div class="container" id="memeGallery"></div>
+
+    <script>
+        let form = document.getElementById("form");
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+
+            let newDiv = document.createElement("div");
+            let newImg = document.createElement("img");
+            let topText = document.createElement("p");
+            let botText = document.createElement("p");
+            let gallery = document.getElementById("memeGallery");
+
+            newImg.setAttribute("src", document.getElementById("imgURL").value);
+            newDiv.setAttribute("class", "newDiv");
+            topText.setAttribute("class", "topText");
+            botText.setAttribute("class", "botText");
+            topText.innerText = document.getElementById("topTextInput").value;
+            botText.innerText = document.getElementById("bottomTextInput").value;
+            gallery.appendChild(newDiv);
+            newDiv.appendChild(topText);
+            newDiv.appendChild(newImg);
+            newDiv.appendChild(botText);
+
+            let deleteButton = document.createElement("p");
+            deleteButton.innerText = "X";
+            deleteButton.setAttribute("class", "hidden");
+            newDiv.appendChild(deleteButton);
+
+            deleteButton.addEventListener("click", function(){
+                gallery.removeChild(newDiv);
+            });
+
+            form.reset();
+        })
+    </script>
+</body>
+</html>

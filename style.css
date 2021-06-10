@@ -1,0 +1,118 @@
+header {
+    height: 30px;
+    width: 100%;
+}
+
+#header-name {
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    float: right;
+    margin-right: 25px;
+    padding-top: 7px;
+}
+
+h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 65px;
+    text-align: center;
+}
+
+form {
+    margin: 25px;
+}
+
+input[type=text] {
+    width: 75%;
+    height: 23px;
+    float: right;
+
+    padding-left: 5px;
+    font-family: 'Work Sans', sans-serif;
+
+}
+
+label {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18px;
+}
+
+input[type="submit"] {
+    background-color: rgb(67, 67, 194);
+    width: 20%;
+    height: 40px;
+    float: right;
+    border: none;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.7;
+}
+
+.newDiv {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.newDiv img {
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+.newDiv:hover {
+    opacity: 0.5;
+}
+
+.newDiv:hover .hidden {
+    display: block;
+    position: absolute;
+    padding: 0%;
+    margin-top: 0px;
+    top: 2px;
+    right: 25px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 75px;
+    cursor: pointer;
+
+    color: rgb(44, 44, 44);
+}
+
+.topText {
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    top: 10px;
+
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 65px;
+}
+
+.botText {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    bottom: 10px;
+
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 65px;
+}
